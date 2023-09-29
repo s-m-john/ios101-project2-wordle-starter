@@ -51,6 +51,8 @@ class BoardController: NSObject,
   func resetBoardWithCurrentSettings() {
     // START YOUR CODE HERE
     // ...
+      numTimesGuessed = 0
+      collectionView.reloadData()
     // END YOUR CODE HERE
   }
   
@@ -109,6 +111,9 @@ class BoardController: NSObject,
   private func applyIsAlienWordleSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
     // ...
+      if let isAlienWordle = settings[kIsAlienWordleKey] as? Bool {
+          self.isAlienWordle = isAlienWordle
+      }
     // START YOUR CODE HERE
   }
 }
